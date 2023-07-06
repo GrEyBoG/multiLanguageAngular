@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "translationTest": {
+      "i18n": {
+        "sourceLocale": "es",
+        "locales": {
+          "en": "src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -35,6 +41,12 @@
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": ["es"]
+            },
+            "en": {
+              "localize": ["en"]
+            },
             "production": {
               "budgets": [
                 {
@@ -64,6 +76,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "es": {
+              "browserTarget": "mi-app:build:es"
+            },
+            "en": {
+              "browserTarget": "mi-app:build:en"
+            },
             "production": {
               "browserTarget": "translationTest:build:production"
             },
@@ -100,5 +118,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f10bfeaf-8f28-4da0-8587-b349d036fc4f"
   }
 }
